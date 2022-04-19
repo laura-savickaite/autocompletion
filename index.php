@@ -1,10 +1,12 @@
 <!-- Cette page doit ressembler à la page d’accueil d’un moteur de recherche. -->
 
 <?php
+require_once('paintingsController.php');
+
 
 if(isset($_POST['search']))
 {
-    var_dump($_POST['search']);   
+    paintingsController::searchbar($_POST['search']);  
 }
 
 ?>
