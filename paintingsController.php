@@ -29,5 +29,4 @@ class paintingsController
         
         var_dump($searchedPaintings);
     }
-
 }

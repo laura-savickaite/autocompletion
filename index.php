@@ -3,11 +3,10 @@
 <?php
 require_once('paintingsController.php');
 
-
-if(isset($_POST['search']))
-{
-    paintingsController::searchbar($_POST['search']);  
-}
+// if(isset($_POST['search']))
+// {
+//     searchController::searchbar($_POST['search']);  
+// }
 
 ?>
 
@@ -16,6 +15,8 @@ if(isset($_POST['search']))
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="search.js" charset="utf-8"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autocompletion</title>
 </head>
