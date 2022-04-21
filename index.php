@@ -2,13 +2,8 @@
 
 <?php
 require_once('paintingsController.php');
-
-// if(isset($_POST['search']))
-// {
-//     searchController::searchbar($_POST['search']);  
-// }
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,10 +16,23 @@ require_once('paintingsController.php');
     <title>Autocompletion</title>
 </head>
 <body>
-    <form action="" method="post">
-        <input type="text" name="search" placeholder="Search">
-        <button id="searchbutton" type="submit" name="submit-search">Search</button>
-    </form>    
+    <article>
+        <form action="" method="post">
+            <input type="text" name="search" placeholder="Search">
+            <button id="searchbutton" type="submit" name="submit-search">Search</button>
+        </form> 
+        
+        <div class="resultats-container">
+            <ul class="resultats-list-one" id="list">
+
+            </ul>
+            <hr>
+            <ul class="resultats-list-two" id="list">
+                
+            </ul>
+        </div>        
+    </article>
+
 </body>
 </html>
 
