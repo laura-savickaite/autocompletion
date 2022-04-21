@@ -17,8 +17,10 @@ require_once('paintingsController.php');
 </head>
 <body>
     <article>
-        <form action="" method="post">
-            <input type="text" name="search" placeholder="Search">
+        <form autocomplete="off" action="" method="post">
+            <div class="autocomplete" style="width:300px;">
+                <input type="text" name="search" placeholder="Search">
+            </div>
             <button id="searchbutton" type="submit" name="submit-search">Search</button>
         </form> 
         
@@ -27,7 +29,7 @@ require_once('paintingsController.php');
 
             </ul>
             <hr>
-            <ul class="resultats-list-two" id="list">
+            <ul class="resultats-list-two" id="list2">
                 
             </ul>
         </div>        
