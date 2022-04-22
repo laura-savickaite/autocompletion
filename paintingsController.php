@@ -8,14 +8,17 @@ class paintingsController
     {
         $model = new PaintingsModel();
         $findAll = $model->selectAll();
+
+        return $findAll;
         
     }
 
-    public static function onePaintings($id)
+    public static function onePainting($id)
     {
         $model = new PaintingsModel();
         $findOne = $model->selectOne($id);
-        
+
+        return $findOne;
     }
 
     public static function searchbar($motclef)
@@ -27,6 +30,6 @@ class paintingsController
         $model = new PaintingsModel;
         $searchedPaintings = $model->search($mot); 
         
-        var_dump($searchedPaintings);
+        // var_dump($searchedPaintings);
     }
 }

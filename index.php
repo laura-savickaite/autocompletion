@@ -2,6 +2,11 @@
 
 <?php
 require_once('paintingsController.php');
+
+if(isset($_POST['submit-search']))
+{
+    paintingsController::searchbar($_POST['search']);
+}
 ?>
 
 
