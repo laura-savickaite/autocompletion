@@ -23,18 +23,20 @@ document.addEventListener('DOMContentLoaded', function loaded() {
             })
             .then ((response) => response.json())
             .then ((response) => {
-                
+
                 if(!(value.length == " ")){
                     
                     if (response.length == 0){
-                        console.log('ras')
+                        const resultNone = document.createElement('li')
+                        resultNone.classList.add('result-item')
+                        resultNone.innerHTML = "No results found."
+                        ul1[0].appendChild(resultNone)   
+
                     }
                     else 
                     {
                         for(let i = 0; i < response.length; i++)
                         { 
-                            console.log(value)
-
                             var letter = response[i].name[0];
                             letter = letter.toLowerCase();
 
@@ -45,20 +47,24 @@ document.addEventListener('DOMContentLoaded', function loaded() {
                             if(letterS.startsWith(value) == true) 
                             {
                                 var letters = response[i].name
+                                const a = document.createElement('a')
                                 const resultItem = document.createElement('li')
                                 resultItem.classList.add('result-item')
+                                a.href = "element.php/"+ response[i].id
                                 resultItem.innerHTML = letters
-                                ul1[0].appendChild(resultItem)   
-                                console.log(letters)                                 
-                                
+                                ul1[0].appendChild(a) 
+                                a.appendChild(resultItem) 
+
                             }
                             else
                             {
-                                console.log(response[i].name);
+                                const a = document.createElement('a')
                                 const resultItems = document.createElement('li')
                                 resultItems.classList.add('result-item')
+                                a.href = "element.php/"+ response[i].id
                                 resultItems.innerHTML = response[i].name
-                                ul2[0].appendChild(resultItems)
+                                ul2[0].appendChild(a)
+                                a.appendChild(resultItems) 
                             }
                         }                       
                     }
