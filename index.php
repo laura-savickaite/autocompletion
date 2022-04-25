@@ -5,7 +5,11 @@ require_once('paintingsController.php');
 
 if(isset($_POST['submit-search']))
 {
-    paintingsController::searchbar($_POST['search']);
+    $résultats = paintingsController::searchbar($_POST['search']);
+
+    var_dump($résultats);
+    
+    //à afficher les propositions avec soleil dedans -> la page
 }
 ?>
 

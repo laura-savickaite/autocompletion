@@ -1,5 +1,7 @@
 <?php
 
+//controlleur d'un tableau, tous les tableaux ET search php version
+
 require_once('paintingsModel.php');
 
 class paintingsController 
@@ -30,6 +32,7 @@ class paintingsController
         $model = new PaintingsModel;
         $searchedPaintings = $model->search($mot); 
         
+        return $searchedPaintings;
         // var_dump($searchedPaintings);
     }
 }

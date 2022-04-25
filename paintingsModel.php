@@ -1,5 +1,7 @@
 <?php
 
+// models liés aux controlleurs
+
 require_once('database.php');
 
 class paintingsModel {

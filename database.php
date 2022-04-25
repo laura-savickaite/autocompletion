@@ -1,4 +1,7 @@
 <?php
+
+//connexion à la database
+
 class Database 
 {
     protected static $instance = null;

@@ -1,5 +1,7 @@
 <?php
 
+//for the javascript
+
 require_once('paintingsModel.php');
 
 $content = trim(file_get_contents("php://input"));

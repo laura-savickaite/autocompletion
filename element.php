@@ -1,5 +1,7 @@
 <?php
 
+//retourne UN tableau/la fiche du tableau
+
 require_once('paintingsController.php');
 
 $url = $_SERVER['REQUEST_URI']; 

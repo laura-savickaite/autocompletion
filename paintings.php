@@ -1,5 +1,7 @@
 <?php
 
+//liste de tous les tableaux
+
 require_once('paintingsController.php');
 
 $paintings = paintingsController::allPaintings();
