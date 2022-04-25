@@ -3,14 +3,6 @@
 <?php
 require_once('paintingsController.php');
 
-if(isset($_POST['submit-search']))
-{
-    $résultats = paintingsController::searchbar($_POST['search']);
-
-    var_dump($résultats);
-    
-    //à afficher les propositions avec soleil dedans -> la page
-}
 ?>
 
 
@@ -42,6 +34,39 @@ if(isset($_POST['submit-search']))
                 
             </ul>
         </div>        
+    </article>
+
+    <article class = "résultats">
+        <?php
+        if(isset($_POST['submit-search'])){
+
+            $résultats = paintingsController::searchbar(@$_POST['search']);
+        
+            if(empty($résultats)){
+                ?>
+
+            <p>
+                Il n'y a pas de résultats pour votre recherche. 
+                Pour visiter nos tableaux, cliquez <a href="./paintings.php">ici</a>.
+            </p>            
+
+                <?php
+            }
+            else 
+            {
+                foreach($résultats as $résultat)
+                {
+                    ?>
+
+                    <img src="./images/paintings/<?= $résultat['painting'] ?>" width="100px">
+                    <h3><a href="element.php/<?= $résultat['id'] ?>"><?= $résultat['name'] ?></a></h3>
+
+                    <?php
+                }
+            }
+        }
+        ?>
+
     </article>
 
 </body>

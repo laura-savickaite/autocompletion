@@ -20,7 +20,7 @@ foreach($paintings as $miniature){
 </head>
 <body>
     <img src="./images/paintings/<?= $miniature['painting'] ?>" width="100px">
-    <h3><?= $miniature['name'] ?></h3>
+    <h3><a href="element.php/<?= $miniature['id'] ?>"><?= $miniature['name'] ?></a></h3>
 </body>
 </html>
 

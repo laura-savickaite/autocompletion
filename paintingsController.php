@@ -33,6 +33,5 @@ class paintingsController
         $searchedPaintings = $model->search($mot); 
         
         return $searchedPaintings;
-        // var_dump($searchedPaintings);
     }
 }
