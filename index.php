@@ -40,9 +40,9 @@ require_once('paintingsController.php');
         <?php
         if(isset($_POST['submit-search'])){
 
-            $résultats = paintingsController::searchbar(@$_POST['search']);
+            $_SESSION['résultats'] = paintingsController::searchbar(@$_POST['search']);
         
-            if(empty($résultats)){
+            if(empty($_SESSION['résultats'])){
                 ?>
 
             <p>
@@ -54,7 +54,7 @@ require_once('paintingsController.php');
             }
             else 
             {
-                foreach($résultats as $résultat)
+                foreach($_SESSION['résultats'] as $résultat)
                 {
                     ?>
 
