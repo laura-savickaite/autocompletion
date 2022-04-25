@@ -1,0 +1,20 @@
+.resultats-container 
+{
+    border: 1px dotted #ccc;
+    padding: 3px;
+    width: 30%;
+}
+
+.resultats-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+.resultats-container ul li {
+    padding: 5px 0;
+  }
+
+.resultats-container ul li:hover {
+    background: #eee;
+  }

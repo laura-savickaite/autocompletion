@@ -11,7 +11,7 @@ require_once('paintingsController.php');
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
     <script src="search.js" charset="utf-8"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autocompletion</title>
@@ -19,9 +19,9 @@ require_once('paintingsController.php');
 <body>
     <article>
         <form autocomplete="off" action="" method="post">
-            <div class="autocomplete" style="width:300px;">
+            <!-- <div class="autocomplete" style="width:300px;"> -->
                 <input type="text" name="search" placeholder="Search">
-            </div>
+            <!-- </div> -->
             <button id="searchbutton" type="submit" name="submit-search">Search</button>
         </form> 
         

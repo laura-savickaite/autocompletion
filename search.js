@@ -5,9 +5,13 @@ document.addEventListener('DOMContentLoaded', function loaded() {
     var ul1 = document.getElementsByClassName('resultats-list-one');
     var ul2 = document.getElementsByClassName('resultats-list-two');
 
+    let resultsdiv = document.getElementsByClassName('resultats-container');
+    resultsdiv[0].style.display = "none"
 
                     
     input.addEventListener('keyup', function(){
+
+        resultsdiv[0].style.display = "block"
 
         // pour supprimer la liste à chaque fois
         ul1[0].innerHTML = ""
@@ -25,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function loaded() {
             .then ((response) => {
 
                 if(!(value.length == " ")){
-                    
+
                     if (response.length == 0){
                         const resultNone = document.createElement('li')
                         resultNone.classList.add('result-item')
@@ -69,6 +73,10 @@ document.addEventListener('DOMContentLoaded', function loaded() {
                         }                       
                     }
                                   
+                }
+                else 
+                {
+                    resultsdiv[0].style.display = "none"
                 }
 
             })
