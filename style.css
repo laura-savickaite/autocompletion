@@ -109,6 +109,12 @@ p {
     margin-left: 90%;
 }
 
+@media (max-width: 820px) {
+    .index-header p {
+        margin-left: 80%;
+    }
+}
+
 .index-header a {
     color: black;
 }
@@ -254,6 +260,15 @@ footer img {
     top: 30px;
 }
 
+@media (max-width: 820px) {
+    .search-header .resultats-container  {
+        position: absolute;
+        top: 30px;
+        background-color: #ffffff;
+        z-index: 6;
+    }
+}
+
 .search-header button {
     cursor: pointer;
     background-color: transparent;
@@ -277,12 +292,33 @@ footer img {
     padding: 3%;
 }
 
-.painting-description {
-    display: flex;
-    flex-direction: column;
-    padding: 5%;
-    width: 45vw;
+
+@media (max-width: 820px) {
+
+    .painting-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3%;
+    }
+
+    .painting-description {
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        width: 70vw;
+    }
 }
+
+@media (min-width: 821px){
+    .painting-description {
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        width: 45vw;
+    }   
+}
+
 
 .painting-description h2 {
     font-size: 3rem;

@@ -43,7 +43,7 @@ $return = paintingsController::onePainting($explode[3]);
                 {
                 ?>
 
-                    <img src="../images/paintings/<?= $painting['painting'] ?>" width="500px">
+                    <img src="../images/paintings/<?= $painting['painting'] ?>">
                     <section class = "painting-description">
                         <h2><?= $painting['name'] ?></h2>
                         <p><?= $painting['description']?></p>
