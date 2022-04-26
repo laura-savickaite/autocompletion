@@ -1,8 +1,158 @@
+/* ------------------------------------------------
+                    Fonts
+--------------------------------------------------- */
+
+@font-face {
+    font-family: Titreprincipal;
+    src: url(fonts/Migra-Extrabold\ copie.ttf);
+}
+
+@font-face {
+    font-family: Titresecondaires;
+    src: url(fonts/EloquentJFCaptionPro\ copie.ttf);
+}
+
+@font-face {
+    font-family: P;
+    src: url(fonts/PPEiko-Medium\ copie.otf);
+}
+
+
+
+/* ------------------------------------------------
+                    RESET
+--------------------------------------------------- */
+
+
+/* Box sizing */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+figure,
+picture {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+/* Set up the body */
+
+body {
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* Keeps the footer at the very bottom
+
+.flex-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+  } */
+
+/* Make images easier to work with (si dieu le veut) */
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Make forms elements easier to work with */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+a {
+    text-decoration: none;
+}
+
+/* Remove animations for those who turned them off (pour ceux qui décident d'enlever les animations dans lur browser : question d'accessiblilité) */
+
+@media (prefers-reduced-motions: reduce){
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+p {
+    font-family: P;
+}
+
+
+/* ------------------------------------------------
+                    INDEX
+--------------------------------------------------- */
+
+
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15%;
+}
+
+.test {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search h1 {
+    font-size: 4rem;
+    background: -webkit-linear-gradient(#4C6F73, #345573);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Titreprincipal;
+}
+
+.search button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #345573;
+    border-radius: 5%;
+    color: #345573;
+    font-family: Titreprincipal;
+}
+
 .resultats-container 
 {
     border: 1px dotted #ccc;
     padding: 3px;
-    width: 30%;
+    width: 230px;
 }
 
 .resultats-container ul {
@@ -13,8 +163,40 @@
   
 .resultats-container ul li {
     padding: 5px 0;
+    color: black;
   }
 
 .resultats-container ul li:hover {
-    background: #eee;
+    background: #9ab2c7;
   }
+
+.résultats {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.tableau-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 3%;
+    border: 1px solid #ccc;
+    width: 400px;
+    padding: 2%;
+}
+
+.tableau-container h3 {
+    margin-left: 3%;
+    font-size: larger;
+    font-family: Titresecondaires;
+}
+
+.tableau-container a {
+    color: black;
+}
+
+.tableau-container a:hover {
+    color: rgb(217, 175, 228);
+}

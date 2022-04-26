@@ -17,23 +17,25 @@ require_once('paintingsController.php');
     <title>Autocompletion</title>
 </head>
 <body>
-    <article>
-        <form autocomplete="off" action="" method="post">
-            <!-- <div class="autocomplete" style="width:300px;"> -->
+    <article class = 'search'>
+        <h1>MonetSearch</h1>
+        <section class = "test">
+            <form autocomplete="off" action="" method="post">
                 <input type="text" name="search" placeholder="Search">
-            <!-- </div> -->
-            <button id="searchbutton" type="submit" name="submit-search">Search</button>
-        </form> 
-        
-        <div class="resultats-container">
-            <ul class="resultats-list-one" id="list">
+                <button id="searchbutton" type="submit" name="submit-search">Search</button>
+            </form> 
+            
+            <div class="resultats-container">
+                <ul class="resultats-list-one" id="list">
 
-            </ul>
-            <hr>
-            <ul class="resultats-list-two" id="list2">
-                
-            </ul>
-        </div>        
+                </ul>
+                <hr>
+                <ul class="resultats-list-two" id="list2">
+                    
+                </ul>
+            </div>               
+        </section>
+     
     </article>
 
     <article class = "résultats">
@@ -58,8 +60,10 @@ require_once('paintingsController.php');
                 {
                     ?>
 
-                    <img src="./images/paintings/<?= $résultat['painting'] ?>" width="100px">
-                    <h3><a href="element.php/<?= $résultat['id'] ?>"><?= $résultat['name'] ?></a></h3>
+                    <div class="tableau-container">
+                        <img src="./images/paintings/<?= $résultat['painting'] ?>" width="120px">
+                        <h3><a href="element.php/<?= $résultat['id'] ?>"><?= $résultat['name'] ?></a></h3>                        
+                    </div>
 
                     <?php
                 }
