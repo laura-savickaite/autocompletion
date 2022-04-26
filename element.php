@@ -6,7 +6,12 @@ require_once('paintingsController.php');
 
 $url = $_SERVER['REQUEST_URI']; 
 $explode = explode("/", $url);  
+
 // var_dump($explode[3]);
+
+if($explode[3] == ""){
+    header('Location:index.php');
+}
 
 $return = paintingsController::onePainting($explode[3]);
     ?>
@@ -24,25 +29,11 @@ $return = paintingsController::onePainting($explode[3]);
 <body>
     <div class="page-container">
 
-        <header class = "search-header">
+        <header class = "element-header">
 
-            <a href="../index.php"><img src="../images/arrow.svg" width="50px"></a>
+            <a href="../paintings.php"><img src="../images/arrow.svg" width="50px"></a>
 
-            <div class = "test">
-                <form autocomplete="off" action="" method="post">
-                    <input type="text" name="search" placeholder="Search">
-                    <button id="searchbutton" type="submit" name="submit-search">Search</button>
-                </form> 
-                <div class="resultats-container">
-                    <ul class="resultats-list-one" id="list">
-
-                    </ul>
-                    <hr>
-                    <ul class="resultats-list-two" id="list2">
-                        
-                    </ul>
-                </div>   
-            </div>   
+            <p><a href = "../index.php">Index</a></p>
         </header>
 
         <main>
