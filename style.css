@@ -58,15 +58,6 @@ body {
     min-height: 100vh;
 }
 
-/* Keeps the footer at the very bottom
-
-.flex-wrapper {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    justify-content: space-between;
-  } */
-
 /* Make images easier to work with (si dieu le veut) */
 
 img,
@@ -114,7 +105,18 @@ p {
                     INDEX
 --------------------------------------------------- */
 
+.index-header p {
+    margin-left: 90%;
+}
 
+.index-header a {
+    color: black;
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+  }
 
 .search {
     display: flex;
@@ -153,6 +155,7 @@ p {
     border: 1px dotted #ccc;
     padding: 3px;
     width: 230px;
+    z-index: 3;
 }
 
 .resultats-container ul {
@@ -174,6 +177,12 @@ p {
     margin-top: 5%;
     display: flex;
     justify-content: center;
+}
+
+#no-result a {
+    color:#9ab2c7;
+    font-size: larger;
+    font-weight: bolder;
 }
 
 .tableau-container {
@@ -200,3 +209,83 @@ p {
 .tableau-container a:hover {
     color: rgb(217, 175, 228);
 }
+
+footer {
+    background-color: rgb(226, 224, 224);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4rem; 
+}
+
+footer img {
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+
+
+/* ------------------------------------------------
+                    PAINTINGS
+--------------------------------------------------- */
+
+.paintings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 5%;
+}
+
+.search-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3%;
+}
+
+.search-header .test {
+    justify-content: flex-start;
+    position: relative;
+}
+
+.search-header .resultats-container  {
+    position: absolute;
+    top: 30px;
+}
+
+.search-header button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #345573;
+    border-radius: 5%;
+    color: #345573;
+    font-family: Titreprincipal;
+}
+
+
+
+
+/* ------------------------------------------------
+                    ELEMENT
+--------------------------------------------------- */
+
+.painting-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3%;
+}
+
+.painting-description {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    width: 45vw;
+}
+
+.painting-description h2 {
+    font-size: 3rem;
+    font-family: Titresecondaires;
+}
+
+

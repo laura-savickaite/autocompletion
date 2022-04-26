@@ -3,6 +3,7 @@
 //controlleur d'un tableau, tous les tableaux ET search php version
 
 require_once('paintingsModel.php');
+require_once('renderer.php');
 
 class paintingsController 
 { 
@@ -30,8 +31,10 @@ class paintingsController
         $mot = trim($motclef);
 
         $model = new PaintingsModel;
-        $searchedPaintings = $model->search($mot); 
-        
+        $searchedPaintings = $model->search($mot);
+
         return $searchedPaintings;
+        
+        // renderer::render('results', compact('searchedPaintings'));
     }
 }

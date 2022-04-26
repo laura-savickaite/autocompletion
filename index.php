@@ -16,63 +16,77 @@ require_once('paintingsController.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autocompletion</title>
 </head>
+
+
 <body>
-    <article class = 'search'>
-        <h1>MonetSearch</h1>
-        <section class = "test">
-            <form autocomplete="off" action="" method="post">
-                <input type="text" name="search" placeholder="Search">
-                <button id="searchbutton" type="submit" name="submit-search">Search</button>
-            </form> 
-            
-            <div class="resultats-container">
-                <ul class="resultats-list-one" id="list">
+    <div class="page-container">
 
-                </ul>
-                <hr>
-                <ul class="resultats-list-two" id="list2">
+        <header class="index-header">
+            <a href="./paintings.php"><p>Paintings</p></a>
+        </header>
+
+        <main>
+            <article class = 'search'>
+                <h1>MonetSearch</h1>
+                <section class = "test">
+                    <form autocomplete="off" action="" method="post">
+                        <input type="text" name="search" placeholder="Search">
+                        <button id="searchbutton" type="submit" name="submit-search">Search</button>
+                    </form> 
                     
-                </ul>
-            </div>               
-        </section>
-     
-    </article>
+                    <div class="resultats-container">
+                        <ul class="resultats-list-one" id="list">
 
-    <article class = "résultats">
-        <?php
-        if(isset($_POST['submit-search'])){
+                        </ul>
+                        <hr>
+                        <ul class="resultats-list-two" id="list2">
+                            
+                        </ul>
+                    </div>               
+                </section>
+            
+            </article>
 
-            $_SESSION['résultats'] = paintingsController::searchbar(@$_POST['search']);
-        
-            if(empty($_SESSION['résultats'])){
+            <article class = "résultats">
+                <?php
+                if(isset($_POST['submit-search'])){
+
+                    $_SESSION['résultats'] = paintingsController::searchbar(@$_POST['search']);
+                
+                    if(empty($_SESSION['résultats'])){
+                        ?>
+
+                    <p id="no-result">
+                        Il n'y a pas de résultats pour votre recherche. 
+                        Pour visiter nos tableaux, cliquez <a href="./paintings.php">ici</a>.
+                    </p>            
+
+                        <?php
+                    }
+                    else 
+                    {
+                        foreach($_SESSION['résultats'] as $résultat)
+                        {
+                            ?>
+
+                            <div class="tableau-container">
+                                <img src="./images/paintings/<?= $résultat['painting'] ?>" width="120px">
+                                <h3><a href="element.php/<?= $résultat['id'] ?>"><?= $résultat['name'] ?></a></h3>                        
+                            </div>
+
+                            <?php
+                        }
+                    }
+                }
                 ?>
 
-            <p>
-                Il n'y a pas de résultats pour votre recherche. 
-                Pour visiter nos tableaux, cliquez <a href="./paintings.php">ici</a>.
-            </p>            
+            </article>
+        </main>
 
-                <?php
-            }
-            else 
-            {
-                foreach($_SESSION['résultats'] as $résultat)
-                {
-                    ?>
-
-                    <div class="tableau-container">
-                        <img src="./images/paintings/<?= $résultat['painting'] ?>" width="120px">
-                        <h3><a href="element.php/<?= $résultat['id'] ?>"><?= $résultat['name'] ?></a></h3>                        
-                    </div>
-
-                    <?php
-                }
-            }
-        }
-        ?>
-
-    </article>
-
+        <footer>
+            <a href="https://github.com/laura-savickaite/autocompletion"><img src="./images/github.png.crdownload" width="35px"></a>
+        </footer>
+    </div>
 </body>
 </html>
 
